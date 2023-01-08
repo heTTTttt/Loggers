@@ -18,7 +18,7 @@ public class FileLoggerConfigLoader {
                     params.put(split[0], split[1]);
                 }
                 params.get("FILE_NAME");
-                new FileLoggerConfiguration();
+                //new FileLoggerConfiguration();
 
             } catch (FileNotFoundException e) {
                 throw new RuntimeException(e);
