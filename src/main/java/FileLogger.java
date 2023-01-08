@@ -1,6 +1,5 @@
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.logging.Level;
 
 public class FileLogger implements Logger {
 
@@ -15,7 +14,7 @@ public class FileLogger implements Logger {
         writer.write(message);
         writer.append('\n');
         writer.flush();
-        getLevel(Level.INFO);
+        getLevel(LoggingLevel.INFO);
     }
 
     @Override
@@ -23,11 +22,11 @@ public class FileLogger implements Logger {
         writer.write(message);
         writer.append('\n');
         writer.flush();
-        getLevel(Level.ALL);
+        getLevel(LoggingLevel.DEBUG);
     }
 
     @Override
-    public Level getLevel(Level level) {
+    public LoggingLevel getLevel(LoggingLevel level) {
         return level;
     }
 }

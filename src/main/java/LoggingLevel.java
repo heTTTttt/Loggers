@@ -1,4 +1,3 @@
 public enum LoggingLevel {
-    INFO,
-    DEBUG
+    INFO, DEBUG
 }
