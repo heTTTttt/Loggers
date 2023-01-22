@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class FileLoggerConfigLoader {
-    public static FileLoggerConfiguration load(String path) throws FileNotFoundException {
+    public FileLoggerConfiguration load(String path) throws FileNotFoundException {
         File file = new File(path);
         if (file.exists()) {
             try (InputStream in = new FileInputStream(path);
@@ -17,17 +17,16 @@ public class FileLoggerConfigLoader {
 
                     params.put(split[0], split[1]);
                 }
-                params.get("FILE_NAME");
-                //new FileLoggerConfiguration();
+                String fileName = params.get("FILE_NAME");
+                String format = params.get("FORMAT");
+                int maxSize = Integer.parseInt(params.get("MAX_SIZE"));
+                LoggingLevel level = LoggingLevel.valueOf(params.get("LEVEL"));
+                return new FileLoggerConfiguration(fileName, level, maxSize, format);
 
-            } catch (FileNotFoundException e) {
-                throw new RuntimeException(e);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            // read file context
-
         }
+        return load(path);
     }
-
 }

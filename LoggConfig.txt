@@ -1,4 +1,4 @@
-FILE: C:\JavaCode\Loggers
+FILE-NAME: C:\JavaCode\Loggers
 LEVEL: DEBUG
 MAX-SIZE: 1024
 FORMAT:[%s][%s][%s]
