@@ -5,13 +5,12 @@ public class Main {
         Logger logger = new FileLogger();
         FileLoggerConfigLoader loader = new FileLoggerConfigLoader();
 
-        loader.load("C:/GitRep/Loggers/LoggsInfo.txt");
-
         logger.info("Start program");
 
         for (int i = 0; i < 10; i++){
             logger.debug("Current value: " + i);
         }
+        loader.load("C:/GitRep/Loggers/LoggConfig.txt");
 
         logger.info("Program executed");
     }
